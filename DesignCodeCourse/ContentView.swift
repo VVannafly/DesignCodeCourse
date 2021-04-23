@@ -78,11 +78,11 @@ struct ContentView: View {
                 .gesture(
                     DragGesture().onChanged { value in
                         self.viewState = value.translation
-                        //                        self.show = true
+                                                self.show = true
                     }
                     .onEnded { value in
                         self.viewState = .zero
-                        //                        self.show = false
+                                                self.show = false
                     }
                 )
 //            Text("\(bottomState.height)").offset(y: -300)
