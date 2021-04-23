@@ -28,7 +28,7 @@ struct BottomSheetView: View {
         .background(Color.white)
         .cornerRadius(30)
         .shadow(radius: (20))
-        .offset(x: 0, y: 500)
+        
     }
 }
 struct BottomSheet_Previews: PreviewProvider {
