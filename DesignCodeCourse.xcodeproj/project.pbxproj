@@ -17,6 +17,8 @@
 		2C9B98AF263701950039907E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B98AE263701950039907E /* HomeScreen.swift */; };
 		2C9B98B326370D4A0039907E /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B98B226370D4A0039907E /* AvatarView.swift */; };
 		2C9B98B726370DD50039907E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B98B626370DD50039907E /* HomeView.swift */; };
+		2C9B98BB263716A40039907E /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B98BA263716A40039907E /* SectionView.swift */; };
+		2C9B98C02637188C0039907E /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B98BF2637188C0039907E /* SectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		2C9B98AE263701950039907E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		2C9B98B226370D4A0039907E /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		2C9B98B626370DD50039907E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2C9B98BA263716A40039907E /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		2C9B98BF2637188C0039907E /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 		2C509CD12631D5680065E81F /* DesignCodeCourse */ = {
 			isa = PBXGroup;
 			children = (
+				2C9B98BE2637187A0039907E /* Model */,
+				2C9B98B9263716940039907E /* Cells */,
 				2C9B98AD263701840039907E /* Screens */,
 				2C5C95DB2632DE5C0078549F /* Views */,
 				2C509CD22631D5680065E81F /* DesignCodeCourseApp.swift */,
@@ -101,6 +107,22 @@
 				2C9B98B626370DD50039907E /* HomeView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		2C9B98B9263716940039907E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2C9B98BA263716A40039907E /* SectionView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2C9B98BE2637187A0039907E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C9B98BF2637188C0039907E /* SectionModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +196,8 @@
 			files = (
 				2C5C95E4263324B20078549F /* MenuView.swift in Sources */,
 				2C509CD52631D5680065E81F /* ContentView.swift in Sources */,
+				2C9B98BB263716A40039907E /* SectionView.swift in Sources */,
+				2C9B98C02637188C0039907E /* SectionModel.swift in Sources */,
 				2C9B98B326370D4A0039907E /* AvatarView.swift in Sources */,
 				2C5C95DE2632DE770078549F /* CardView.swift in Sources */,
 				2C9B98AF263701950039907E /* HomeScreen.swift in Sources */,
