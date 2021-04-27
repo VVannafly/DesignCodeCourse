@@ -8,15 +8,33 @@
 import SwiftUI
 
 struct UpdateList: View {
+
+    @ObservedObject var store = UpdateStore()
+
+    func addUpdate() {
+        store.updates.append(Update(image: "Card1", title: "New Item", text: "text", date: "Jan 1"))
+    }
+    
     var body: some View {
         NavigationView {
-            List(updateData) { update in
-                NavigationLink(
-                    destination: UpdateDetail(update: update)) {
-                    UpdateRow(update: update)
+            List {
+                ForEach(store.updates) { update in
+                    NavigationLink(
+                        destination: UpdateDetail(update: update)) {
+                        UpdateRow(update: update)
+                    }
+                }
+                .onDelete { index in
+                    self.store.updates.remove(at: index.first!)
+                }
+                .onMove { (source: IndexSet, destination: Int) in
+                    self.store.updates.move(fromOffsets: source, toOffset: destination)
                 }
             }
-            .navigationBarTitle(Text("Updates"))
+            .navigationTitle(Text("Updates"))
+            .navigationBarItems(leading: Button(action: addUpdate) {
+                Text("Add Update")
+            }, trailing: EditButton())
         }
     }
 }

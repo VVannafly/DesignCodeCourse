@@ -33,3 +33,4 @@ struct UpdateDetail_Previews: PreviewProvider {
         UpdateDetail()
     }
 }
+
