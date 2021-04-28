@@ -14,6 +14,7 @@ struct ContentView: View {
     @State var bottomState = CGSize.zero
     @State var showFull = false
 
+
     var body: some View {
         ZStack {
             TitleView()
@@ -87,7 +88,7 @@ struct ContentView: View {
                 )
 //            Text("\(bottomState.height)").offset(y: -300)
 
-            BottomSheetView()
+            BottomSheetView(show: $showCard)
                 .offset(x: 0, y: showCard ? 430 : 1000)
                 .offset(y: bottomState.height)
                 .blur(radius: show ? 20 : 0)
@@ -133,21 +134,4 @@ struct BackCardView: View {
         }
     }
 }
-
-struct TitleView: View {
-    var body: some View {
-        VStack {
-            HStack {
-                Text("Certificates")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Spacer()
-            }
-            .padding()
-            Image("Background1")
-            Spacer()
-        }
-    }
-}
-
 
