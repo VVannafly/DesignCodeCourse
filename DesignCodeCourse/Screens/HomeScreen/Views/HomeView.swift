@@ -16,6 +16,7 @@ struct HomeView: View {
             HStack {
                 Text("Watching")
                     .font(.system(size: 28, weight: .bold))
+                    .modifier(CustomFontModifier(size: 34))
 
                 Spacer()
 
@@ -39,18 +40,11 @@ struct HomeView: View {
             .padding(.leading, 14)
             .padding(.top, 30)
 
-            HStack(spacing: 12) {
-                RingView(color1: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1), color2: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), width: 44, height: 44, percent: 68, show: .constant(true))
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("6 minutes left").font(.subheadline).fontWeight(.bold)
-                    Text("Watched 10 mins today").font(.caption)
-                }
+            ScrollView(.horizontal, showsIndicators: false) {
+                WatchRingsView()
+                    .padding(.horizontal, 30)
+                    .padding(.bottom, 30)
             }
-            .padding(8)
-            .background(Color(.systemBackground))
-            .cornerRadius(20)
-            .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
-            .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
@@ -85,13 +79,15 @@ let sectionData = [Section(title: "Prototype designs in SwiftUI",
                            image: Image("Card1"),
                            color: Color("card1")),
                    Section(title: "Build a SwiftUI app",
-                                              text: "20 Sections",
-                                              logo: "Logo1",
-                                              image: Image(uiImage: #imageLiteral(resourceName: "Background1")),
-                                              color: Color("card2")),
+                           text: "20 Sections",
+                           logo: "Logo1",
+                           image: Image(uiImage: #imageLiteral(resourceName: "Background1")),
+                           color: Color("card2")),
                    Section(title: "SwiftUI Advanced",
-                                              text: "20 Sections",
-                                              logo: "Logo1",
-                                              image: Image(uiImage: #imageLiteral(resourceName: "Card6")),
-                                              color: Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1))),
+                           text: "20 Sections",
+                           logo: "Logo1",
+                           image: Image(uiImage: #imageLiteral(resourceName: "Card6")),
+                           color: Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1))),
 ]
+
+
