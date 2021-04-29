@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @Binding var showProfile: Bool
     @State var showUpdate = false
+    @Binding var showContent: Bool
 
     var body: some View {
         VStack {
@@ -44,6 +45,9 @@ struct HomeView: View {
                 WatchRingsView()
                     .padding(.horizontal, 30)
                     .padding(.bottom, 30)
+                    .onTapGesture {
+                        self.showContent = true
+                    }
             }
 
             ScrollView(.horizontal, showsIndicators: false) {
@@ -61,6 +65,7 @@ struct HomeView: View {
                 .padding(30)
                 .padding(.bottom, 30)
             }
+            .offset(y: -30)
             Spacer()
 
         }
@@ -69,7 +74,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(showProfile: .constant(false))
+        HomeView(showProfile: .constant(false), showContent: .constant(false))
     }
 }
 

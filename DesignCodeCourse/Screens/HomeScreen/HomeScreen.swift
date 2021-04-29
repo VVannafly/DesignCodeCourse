@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeScreen: View {
     @State var showProfile = false
     @State var viewState = CGSize.zero
+    @State var showContent = false
 
     var body: some View {
         ZStack {
@@ -17,7 +18,7 @@ struct HomeScreen: View {
             Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
                 .edgesIgnoringSafeArea(.all)
 
-            HomeView(showProfile: $showProfile)
+            HomeView(showProfile: $showProfile, showContent: $showContent)
                 .padding(.top, 44)
                 .background(Color(.systemBackground))
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
@@ -50,6 +51,11 @@ struct HomeScreen: View {
 
                 }
                 )
+
+            if showContent {
+                
+                ContentView()
+            }
         }
     }
 }
