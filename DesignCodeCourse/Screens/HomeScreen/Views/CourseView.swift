@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CourseView: View {
     @Binding var show: Bool
+    @Binding var active: Bool
     var course: Course
+    var index: Int
+    @Binding var activeIndex: Int
+
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -71,6 +75,12 @@ struct CourseView: View {
             .shadow(color: Color(course.color).opacity(0.3), radius: 20, x: 0, y: 20)
             .onTapGesture {
                 self.show.toggle()
+                self.active.toggle()
+                if self.show {
+                    self.activeIndex = self.index
+                } else {
+                    self.activeIndex = -1
+                }
             }
 
         }
