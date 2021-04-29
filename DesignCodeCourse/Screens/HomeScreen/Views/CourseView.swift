@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CourseView: View {
     @Binding var show: Bool
+    var course: Course
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -32,15 +33,15 @@ struct CourseView: View {
             VStack {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 8.0) {
-                        Text("SwiftUI Advanced")
+                        Text(course.title)
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(.white)
-                        Text("20 Sections")
+                        Text(course.subtitle)
                             .foregroundColor(.white).opacity(0.7)
                     }
                     Spacer()
                     ZStack {
-                        Image(uiImage: #imageLiteral(resourceName: "Logo1"))
+                        Image(uiImage: course.logo)
                             .opacity(show ? 0 : 1)
 
                         VStack {
@@ -55,7 +56,7 @@ struct CourseView: View {
                     }
                 }
                 Spacer()
-                Image(uiImage: #imageLiteral(resourceName: "Card2"))
+                Image(uiImage: course.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: .infinity)
@@ -65,20 +66,17 @@ struct CourseView: View {
             .padding(.top, show ? 30 : 0)
             .frame(maxWidth: show ? .infinity : screen.width - 60, maxHeight: show ? 460 : 280)
     //        .frame(width: show ? screen.width : screen.width - 60, height: show ? screen.height :  280)
-            .background(Color(#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)))
+            .background(Color(course.color))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .shadow(color: Color(#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)).opacity(0.3), radius: 20, x: 0, y: 20)
+            .shadow(color: Color(course.color).opacity(0.3), radius: 20, x: 0, y: 20)
             .onTapGesture {
                 self.show.toggle()
             }
 
         }
+        .frame(height: show ? screen.height : 280)
         .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
         .edgesIgnoringSafeArea(.all)
     }
 }
-struct CourseView_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseView(show: .constant(false))
-    }
-}
+
