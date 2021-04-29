@@ -99,10 +99,11 @@ struct CourseView: View {
                     self.activeIndex = -1
                 }
             }
+
             if show {
-                CourseDetail(course: course, show: $show, active: $active, activeIndex: $activeIndex)
-                    .background(Color.white)
-                    .animation(nil)
+//                CourseDetail(course: course, show: $show, active: $active, activeIndex: $activeIndex)
+//                    .background(Color.white)
+//                    .animation(nil)
             }
         }
         .frame(height: show ? screen.height : 280)
@@ -111,6 +112,7 @@ struct CourseView: View {
             .degrees(Double(self.activeView.height / 10)),
             axis: (x: 0.0, y: 10.0, z: 0.0)
         )
+        .hueRotation(Angle(degrees: Double(self.activeView.height)))
         .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
         .gesture(
             show ?

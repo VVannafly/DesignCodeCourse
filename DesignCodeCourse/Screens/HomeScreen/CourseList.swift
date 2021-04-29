@@ -16,6 +16,7 @@ struct CourseList: View {
     var body: some View {
         ZStack {
             Color.black.opacity(Double(self.activeView.height / 500))
+                .animation(.linear)
                 .edgesIgnoringSafeArea(.all)
 
             ScrollView {
@@ -26,6 +27,7 @@ struct CourseList: View {
                         .padding(.leading, 30)
                         .padding(.top, 30)
                         .blur(radius: active ? 20 : 0)
+                    
                     ForEach(courses.indices, id: \.self) { index in
                         GeometryReader { geometry in
                             CourseView(
