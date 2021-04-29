@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CourseView: View {
-    @State var show = false
+    @Binding var show: Bool
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -79,6 +79,6 @@ struct CourseView: View {
 }
 struct CourseView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseView()
+        CourseView(show: .constant(false))
     }
 }
