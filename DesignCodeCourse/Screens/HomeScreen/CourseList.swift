@@ -11,10 +11,11 @@ struct CourseList: View {
     @State var courses = courseData
     @State var active = false
     @State var activeIndex = -1
+    @State var activeView = CGSize.zero
 
     var body: some View {
         ZStack {
-            Color.black.opacity(active ? 0.5 : 0)
+            Color.black.opacity(Double(self.activeView.height / 500))
                 .edgesIgnoringSafeArea(.all)
 
             ScrollView {
@@ -32,7 +33,8 @@ struct CourseList: View {
                                 active: $active,
                                 course: self.courses[index],
                                 index: index,
-                                activeIndex: self.$activeIndex
+                                activeIndex: self.$activeIndex,
+                                activeView: self.$activeView
                             )
                             .offset(y: self.courses[index].show ? -geometry.frame(in: .global).minY : 0)
                             .opacity(self.activeIndex != index && self.active ? 0 : 1)
