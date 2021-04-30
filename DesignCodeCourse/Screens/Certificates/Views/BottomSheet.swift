@@ -44,7 +44,7 @@ struct BottomSheetView: View {
         .padding(.top, 8)
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity)
-        .background(Color.white)
+        .background(BlurView(style: .systemThinMaterial))
         .cornerRadius(30)
         .shadow(radius: (20))
         
