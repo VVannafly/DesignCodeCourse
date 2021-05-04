@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A6E3B232641597500335B63 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E3B222641597500335B63 /* Buttons.swift */; };
 		2C20FC6426385BE000ABD5B7 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20FC6326385BE000ABD5B7 /* UpdateStore.swift */; };
 		2C20FC692638687400ABD5B7 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20FC682638687400ABD5B7 /* TabBar.swift */; };
 		2C509CD32631D5680065E81F /* DesignCodeCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C509CD22631D5680065E81F /* DesignCodeCourseApp.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A6E3B222641597500335B63 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		2C20FC6326385BE000ABD5B7 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		2C20FC682638687400ABD5B7 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		2C509CCF2631D5680065E81F /* DesignCodeCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCodeCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 			children = (
 				2C7455042639A54700910AE5 /* RingView.swift */,
 				2C74550A2639B68F00910AE5 /* Modifiers.swift */,
+				0A6E3B222641597500335B63 /* Buttons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				2C745533263B12A500910AE5 /* CourseDetail.swift in Sources */,
 				2C74553B263C017600910AE5 /* PostList.swift in Sources */,
 				2C74550B2639B68F00910AE5 /* Modifiers.swift in Sources */,
+				0A6E3B232641597500335B63 /* Buttons.swift in Sources */,
 				2C7455052639A54700910AE5 /* RingView.swift in Sources */,
 				2C9B98E9263825C30039907E /* UpdateModel.swift in Sources */,
 				2C9B98B326370D4A0039907E /* AvatarView.swift in Sources */,
