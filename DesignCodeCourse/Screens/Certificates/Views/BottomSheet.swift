@@ -34,7 +34,7 @@ struct BottomSheetView: View {
                         .lineSpacing(4)
                 }
                 .padding(20)
-                .background(Color(.systemBackground))
+                .background(Color("background3"))
                 .cornerRadius(20)
                 .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 10)
             }
