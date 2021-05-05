@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A6815FC2642B3950059287B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6815FB2642B3950059287B /* LoginView.swift */; };
 		0A6E3B232641597500335B63 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E3B222641597500335B63 /* Buttons.swift */; };
 		2C20FC6426385BE000ABD5B7 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20FC6326385BE000ABD5B7 /* UpdateStore.swift */; };
 		2C20FC692638687400ABD5B7 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20FC682638687400ABD5B7 /* TabBar.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A6815FB2642B3950059287B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0A6E3B222641597500335B63 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		2C20FC6326385BE000ABD5B7 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		2C20FC682638687400ABD5B7 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				2C7455002639A2AF00910AE5 /* ViewModel */,
 				2C7454FA2639A24C00910AE5 /* Views */,
 				2C9B98AE263701950039907E /* HomeScreen.swift */,
+				0A6815FB2642B3950059287B /* LoginView.swift */,
 				2C9B98C5263818480039907E /* UpdateList.swift */,
 				2C9B991026382D880039907E /* UpdateDetail.swift */,
 				2C745528263ACB6300910AE5 /* CourseList.swift */,
@@ -384,6 +387,7 @@
 				2C671238263C58DA00091AF5 /* BlurView.swift in Sources */,
 				2C9B98C6263818480039907E /* UpdateList.swift in Sources */,
 				2C745529263ACB6300910AE5 /* CourseList.swift in Sources */,
+				0A6815FC2642B3950059287B /* LoginView.swift in Sources */,
 				2C745530263AFB7F00910AE5 /* CourseModel.swift in Sources */,
 				2C9B991126382D880039907E /* UpdateDetail.swift in Sources */,
 				2C5C95DE2632DE770078549F /* CardView.swift in Sources */,
