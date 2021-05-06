@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginView: View {
     @State var email = ""
@@ -14,6 +15,30 @@ struct LoginView: View {
     @State var showAlert = false
     @State var alertMessage = "Something went wrong"
     @State var isLoading = false
+    @State var isSuccessful = false
+    
+    func login() {
+        self.hideKeyboard()
+        self.isFocused = false
+        self.isLoading = true
+        
+        Auth.auth().signIn(withEmail: email, password: password) { data, error in
+            self.isLoading = false
+            
+            if error != nil {
+                self.alertMessage = error?.localizedDescription ?? ""
+                self.showAlert = true
+            } else {
+                self.isSuccessful = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.email = ""
+                    self.password = ""
+                    self.isSuccessful = false
+                }
+            }
+        }
+    }
     
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -80,6 +105,7 @@ struct LoginView: View {
                 .padding(.horizontal)
                 .offset(y: 460)
                 
+                
                 HStack {
                     Text("Forgot password")
                         .font(.subheadline)
@@ -87,15 +113,8 @@ struct LoginView: View {
                     Spacer()
                     
                     Button(action: {
-                        self.hideKeyboard()
-                        self.isFocused = false
-                        self.isLoading = true
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            self.isLoading = false
-                            self.showAlert = true
-                        }
-                    } ) {
+                        self.login()
+                    }) {
                         Text("Log in").foregroundColor(.black)
                     }
                     .padding(12)
@@ -111,7 +130,7 @@ struct LoginView: View {
                 .padding()
             }
             
-            .offset(y: isFocused ? -220 : 0)
+            .offset(y: isFocused ? -300 : 0)
             .animation(isFocused ? .easeInOut : nil)
             .onTapGesture {
                 self.isFocused = false
@@ -119,6 +138,10 @@ struct LoginView: View {
             }
             if isLoading {
                 LoadingView()
+            }
+            
+            if isSuccessful {
+                SuccessView()
             }
         }
     }
