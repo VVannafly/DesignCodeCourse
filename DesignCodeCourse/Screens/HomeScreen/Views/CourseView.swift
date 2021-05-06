@@ -15,7 +15,8 @@ struct CourseView: View {
     var index: Int
     @Binding var activeIndex: Int
     @Binding var activeView: CGSize
-
+    var bounds: GeometryProxy
+    
     var body: some View {
         ZStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 30) {
@@ -31,7 +32,7 @@ struct CourseView: View {
             .frame(maxWidth: show ? .infinity : screen.width - 60, maxHeight: show ? .infinity : 280, alignment: .top)
             .offset(y: show ? 460 : 0 )
             .background(Color("background2"))
-            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: show ? getCardCornerRadius(bounds: bounds) : 30, style: .continuous))
             .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
             .opacity(show ? 1 : 0)
 
@@ -72,7 +73,7 @@ struct CourseView: View {
             .frame(maxWidth: show ? .infinity : screen.width - 60, maxHeight: show ? 460 : 280)
     //        .frame(width: show ? screen.width : screen.width - 60, height: show ? screen.height :  280)
             .background(Color(course.color))
-            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: show ? getCardCornerRadius(bounds: bounds) : 30, style: .continuous))
             .shadow(color: Color(course.color).opacity(0.3), radius: 20, x: 0, y: 20)
             .gesture(
                 show ?
@@ -107,7 +108,7 @@ struct CourseView: View {
 //                    .animation(nil)
             }
         }
-        .frame(height: show ? screen.height : 280)
+        .frame(height: show ? bounds.size.height + bounds.safeAreaInsets.top + bounds.safeAreaInsets.bottom : 280)
         .scaleEffect(1 - self.activeView.height / 1000)
         .rotation3DEffect(
             .degrees(Double(self.activeView.height / 10)),
