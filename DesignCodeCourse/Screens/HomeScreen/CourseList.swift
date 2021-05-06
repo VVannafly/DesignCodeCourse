@@ -13,6 +13,7 @@ struct CourseList: View {
     @State var activeIndex = -1
     @State var activeView = CGSize.zero
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @State var isScrollable = false
 
     var body: some View {
         GeometryReader { bounds in
@@ -38,7 +39,8 @@ struct CourseList: View {
                                     course: self.store.courses[index],
                                     index: index,
                                     activeIndex: self.$activeIndex,
-                                    activeView: self.$activeView, bounds: bounds
+                                    activeView: self.$activeView, bounds: bounds,
+                                    isScrollable: $isScrollable
                                 )
                                 .offset(y: self.store.courses[index].show ? -geometry.frame(in: .global).minY : 0)
                                 .opacity(self.activeIndex != index && self.active ? 0 : 1)
@@ -55,6 +57,7 @@ struct CourseList: View {
                 }
                 .statusBar(hidden: active ? true : false)
                 .animation(.linear)
+                .disabled(self.active && !self.isScrollable ? true : false)
             }
         }
     }
