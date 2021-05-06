@@ -19,6 +19,7 @@
 		0A9716AD264406B800AD7286 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 0A9716AC264406B800AD7286 /* FirebaseAnalyticsSwift-Beta */; };
 		0A9716AF264406B800AD7286 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0A9716AE264406B800AD7286 /* FirebaseFirestore */; };
 		0A9716B12644078400AD7286 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A9716B02644078400AD7286 /* GoogleService-Info.plist */; };
+		0A9716B3264412E000AD7286 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9716B2264412E000AD7286 /* UserStore.swift */; };
 		2C20FC6426385BE000ABD5B7 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20FC6326385BE000ABD5B7 /* UpdateStore.swift */; };
 		2C20FC692638687400ABD5B7 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20FC682638687400ABD5B7 /* TabBar.swift */; };
 		2C509CD32631D5680065E81F /* DesignCodeCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C509CD22631D5680065E81F /* DesignCodeCourseApp.swift */; };
@@ -73,6 +74,7 @@
 		0A9716A52643F9F500AD7286 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0A9716A7264401FB00AD7286 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		0A9716B02644078400AD7286 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A9716B2264412E000AD7286 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		2C20FC6326385BE000ABD5B7 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		2C20FC682638687400ABD5B7 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		2C509CCF2631D5680065E81F /* DesignCodeCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCodeCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +265,7 @@
 				2C745537263BFFAC00910AE5 /* Data.swift */,
 				2C74553F263C097700910AE5 /* DataStore.swift */,
 				2C745546263C0F5300910AE5 /* CourseStore.swift */,
+				0A9716B2264412E000AD7286 /* UserStore.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C5C95E4263324B20078549F /* MenuView.swift in Sources */,
+				0A9716B3264412E000AD7286 /* UserStore.swift in Sources */,
 				2C20FC6426385BE000ABD5B7 /* UpdateStore.swift in Sources */,
 				0A9716A8264401FB00AD7286 /* SuccessView.swift in Sources */,
 				2C509CD52631D5680065E81F /* ContentView.swift in Sources */,

@@ -16,6 +16,7 @@ struct LoginView: View {
     @State var alertMessage = "Something went wrong"
     @State var isLoading = false
     @State var isSuccessful = false
+    @EnvironmentObject var user: UserStore
     
     func login() {
         self.hideKeyboard()
@@ -30,11 +31,13 @@ struct LoginView: View {
                 self.showAlert = true
             } else {
                 self.isSuccessful = true
+                self.user.isLogged = true
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.email = ""
                     self.password = ""
                     self.isSuccessful = false
+                    self.user.showLogin = false
                 }
             }
         }
@@ -104,7 +107,8 @@ struct LoginView: View {
                 .shadow(color: Color.black.opacity(0.15), radius: 20, x: 0, y: 20)
                 .padding(.horizontal)
                 .offset(y: 460)
-                
+                .offset(y: isFocused ? -300 : 0)
+                .animation(isFocused ? .easeInOut : nil)
                 
                 HStack {
                     Text("Forgot password")
@@ -130,8 +134,7 @@ struct LoginView: View {
                 .padding()
             }
             
-            .offset(y: isFocused ? -300 : 0)
-            .animation(isFocused ? .easeInOut : nil)
+            
             .onTapGesture {
                 self.isFocused = false
                 self.hideKeyboard()

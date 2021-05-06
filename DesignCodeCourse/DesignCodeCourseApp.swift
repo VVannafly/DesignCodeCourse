@@ -17,7 +17,7 @@ struct DesignCodeCourseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            TabBar().environmentObject(UserStore())
         }
     }
 }

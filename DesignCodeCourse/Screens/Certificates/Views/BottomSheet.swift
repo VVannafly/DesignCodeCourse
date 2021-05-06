@@ -43,11 +43,11 @@ struct BottomSheetView: View {
         }
         .padding(.top, 8)
         .padding(.horizontal, 20)
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: 712)
         .background(BlurView(style: .systemThinMaterial))
         .cornerRadius(30)
         .shadow(radius: (20))
-        
+        .frame(maxWidth: .infinity)
     }
 }
 struct BottomSheet_Previews: PreviewProvider {

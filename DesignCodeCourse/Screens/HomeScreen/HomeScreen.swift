@@ -11,7 +11,8 @@ struct HomeScreen: View {
     @State var showProfile = false
     @State var viewState = CGSize.zero
     @State var showContent = false
-
+    @EnvironmentObject var user: UserStore
+    
     var body: some View {
         ZStack {
             Color("background2")
@@ -43,7 +44,7 @@ struct HomeScreen: View {
                 .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
                 .edgesIgnoringSafeArea(.all)
 
-            MenuView()
+            MenuView(showProfile: $showProfile)
                 .background(Color.black.opacity(0.001))
                 .offset(y: showProfile ? 0 : screen.height)
                 .offset(y: viewState.height)
@@ -63,6 +64,28 @@ struct HomeScreen: View {
                 }
                 )
 
+            if user.showLogin {
+                ZStack {
+                    LoginView()
+                    
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "xmark")
+                                .frame(width: 36, height: 36)
+                                .foregroundColor(Color(.systemBackground))
+                                .background(Color.primary)
+                                .clipShape(Circle())
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                    .onTapGesture {
+                        self.user.showLogin = false
+                    }
+                }
+            }
+            
             if showContent {
                 BlurView(style: .systemMaterial).edgesIgnoringSafeArea(.all)
 
@@ -94,6 +117,7 @@ struct HomeScreen: View {
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         HomeScreen().environment(\.colorScheme, .dark)
+            .environmentObject(UserStore())
     }
 }
 
