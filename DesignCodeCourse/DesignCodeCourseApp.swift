@@ -17,7 +17,7 @@ struct DesignCodeCourseApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabBar().environmentObject(UserStore())
+            HomeScreen().environmentObject(UserStore())
         }
     }
 }

@@ -170,6 +170,7 @@
 				2C9B98B9263716940039907E /* Cells */,
 				2C9B98AD263701840039907E /* Screens */,
 				2C5C95DB2632DE5C0078549F /* Views */,
+				2C20FC682638687400ABD5B7 /* TabBar.swift */,
 				2C509CD22631D5680065E81F /* DesignCodeCourseApp.swift */,
 				2C509CD62631D5690065E81F /* Assets.xcassets */,
 				0A97169B2643F74E00AD7286 /* Lottie */,
@@ -177,7 +178,6 @@
 				0A9716B02644078400AD7286 /* GoogleService-Info.plist */,
 				2C509CDB2631D5690065E81F /* Info.plist */,
 				2C509CD82631D5690065E81F /* Preview Content */,
-				2C20FC682638687400ABD5B7 /* TabBar.swift */,
 			);
 			path = DesignCodeCourse;
 			sourceTree = "<group>";
